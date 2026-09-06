@@ -1,0 +1,13 @@
+# Packages
+.dart_tool/
+.pub/
+build/
+
+# Android
+.gradle/
+local.properties
+*.so
+
+# iOS
+Pods/
+*.xcworkspace
