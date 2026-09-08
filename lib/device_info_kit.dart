@@ -77,6 +77,8 @@ class AndroidBuildVersion {
   final String release;
   final String incremental;
   final String codename;
+  final int previewSdkInt;
+  final String securityPatch;
 
   AndroidBuildVersion({
     required this.baseOS,
@@ -84,6 +86,8 @@ class AndroidBuildVersion {
     required this.release,
     required this.incremental,
     required this.codename,
+    required this.previewSdkInt,
+    required this.securityPatch,
   });
 
   factory AndroidBuildVersion.fromMap(Map<String, dynamic> map) {
@@ -93,6 +97,8 @@ class AndroidBuildVersion {
       release: map['release'] ?? '',
       incremental: map['incremental'] ?? '',
       codename: map['codename'] ?? '',
+      previewSdkInt: map['previewSdkInt'] ?? 0,
+      securityPatch: map['securityPatch'] ?? '',
     );
   }
 
@@ -103,6 +109,44 @@ class AndroidBuildVersion {
       'release': release,
       'incremental': incremental,
       'codename': codename,
+      'previewSdkInt': previewSdkInt,
+      'securityPatch': securityPatch,
+    };
+  }
+}
+
+class AndroidDisplayMetrics {
+  final int widthPixels;
+  final int heightPixels;
+  final int densityDpi;
+  final double xdpi;
+  final double ydpi;
+
+  AndroidDisplayMetrics({
+    required this.widthPixels,
+    required this.heightPixels,
+    required this.densityDpi,
+    required this.xdpi,
+    required this.ydpi,
+  });
+
+  factory AndroidDisplayMetrics.fromMap(Map<String, dynamic> map) {
+    return AndroidDisplayMetrics(
+      widthPixels: map['widthPixels'] ?? 0,
+      heightPixels: map['heightPixels'] ?? 0,
+      densityDpi: map['densityDpi'] ?? 0,
+      xdpi: (map['xdpi'] as num?)?.toDouble() ?? 0.0,
+      ydpi: (map['ydpi'] as num?)?.toDouble() ?? 0.0,
+    );
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'widthPixels': widthPixels,
+      'heightPixels': heightPixels,
+      'densityDpi': densityDpi,
+      'xdpi': xdpi,
+      'ydpi': ydpi,
     };
   }
 }
@@ -121,9 +165,19 @@ class AndroidDeviceInfo {
   final String manufacturer;
   final String model;
   final String product;
+  final String tags;
+  final String type;
   final List<String> supportedAbis;
   final bool isPhysicalDevice;
   final String androidId;
+  final int totalMemory;
+  final bool isLowMemoryDevice;
+  final int totalStorage;
+  final int freeStorage;
+  final AndroidDisplayMetrics displayMetrics;
+  final String locale;
+  final String timeZoneId;
+  final List<String> systemFeatures;
 
   AndroidDeviceInfo({
     required this.version,
@@ -139,9 +193,19 @@ class AndroidDeviceInfo {
     required this.manufacturer,
     required this.model,
     required this.product,
+    required this.tags,
+    required this.type,
     required this.supportedAbis,
     required this.isPhysicalDevice,
     required this.androidId,
+    required this.totalMemory,
+    required this.isLowMemoryDevice,
+    required this.totalStorage,
+    required this.freeStorage,
+    required this.displayMetrics,
+    required this.locale,
+    required this.timeZoneId,
+    required this.systemFeatures,
   });
 
   factory AndroidDeviceInfo.fromMap(Map<String, dynamic> map) {
@@ -160,9 +224,20 @@ class AndroidDeviceInfo {
       manufacturer: map['manufacturer'] ?? '',
       model: map['model'] ?? '',
       product: map['product'] ?? '',
+      tags: map['tags'] ?? '',
+      type: map['type'] ?? '',
       supportedAbis: List<String>.from(map['supportedAbis'] ?? []),
       isPhysicalDevice: map['isPhysicalDevice'] ?? true,
       androidId: map['androidId'] ?? '',
+      totalMemory: map['totalMemory'] ?? 0,
+      isLowMemoryDevice: map['isLowMemoryDevice'] ?? false,
+      totalStorage: map['totalStorage'] ?? 0,
+      freeStorage: map['freeStorage'] ?? 0,
+      displayMetrics: AndroidDisplayMetrics.fromMap(
+          (map['displayMetrics'] as Map<String, dynamic>?) ?? {}),
+      locale: map['locale'] ?? '',
+      timeZoneId: map['timeZoneId'] ?? '',
+      systemFeatures: List<String>.from(map['systemFeatures'] ?? []),
     );
   }
 
@@ -181,9 +256,19 @@ class AndroidDeviceInfo {
       'manufacturer': manufacturer,
       'model': model,
       'product': product,
+      'tags': tags,
+      'type': type,
       'supportedAbis': supportedAbis,
       'isPhysicalDevice': isPhysicalDevice,
       'androidId': androidId,
+      'totalMemory': totalMemory,
+      'isLowMemoryDevice': isLowMemoryDevice,
+      'totalStorage': totalStorage,
+      'freeStorage': freeStorage,
+      'displayMetrics': displayMetrics.toMap(),
+      'locale': locale,
+      'timeZoneId': timeZoneId,
+      'systemFeatures': systemFeatures,
     };
   }
 }

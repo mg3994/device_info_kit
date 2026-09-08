@@ -32,3 +32,9 @@ android {
         }
     }
 }
+
+dependencies {
+    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.annotation:annotation:1.7.1")
+    compileOnly("io.flutter:flutter_embedding_release:1.0.0-e7119a0e10")
+}

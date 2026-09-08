@@ -64,6 +64,8 @@ void main() {
           'release': '14',
           'incremental': '1234567',
           'codename': 'REL',
+          'previewSdkInt': 0,
+          'securityPatch': '2024-01-01',
         },
         'board': 'tango',
         'bootloader': 'unknown',
@@ -77,9 +79,25 @@ void main() {
         'manufacturer': 'Google',
         'model': 'Pixel 8 Pro',
         'product': 'husky',
+        'tags': 'release-keys',
+        'type': 'user',
         'supportedAbis': ['arm64-v8a', 'armeabi-v7a'],
         'isPhysicalDevice': true,
         'androidId': 'a1b2c3d4e5f6',
+        'totalMemory': 12000000000,
+        'isLowMemoryDevice': false,
+        'totalStorage': 128000000000,
+        'freeStorage': 64000000000,
+        'displayMetrics': {
+          'widthPixels': 1440,
+          'heightPixels': 3120,
+          'densityDpi': 560,
+          'xdpi': 560.0,
+          'ydpi': 560.0,
+        },
+        'locale': 'en_US',
+        'timeZoneId': 'America/New_York',
+        'systemFeatures': ['android.hardware.camera', 'android.hardware.bluetooth'],
       };
 
       final info = AndroidDeviceInfo.fromMap(map);
@@ -88,9 +106,13 @@ void main() {
       expect(info.manufacturer, equals('Google'));
       expect(info.version.sdkInt, equals(34));
       expect(info.version.release, equals('14'));
+      expect(info.version.securityPatch, equals('2024-01-01'));
       expect(info.supportedAbis, contains('arm64-v8a'));
       expect(info.androidId, equals('a1b2c3d4e5f6'));
       expect(info.isPhysicalDevice, isTrue);
+      expect(info.totalMemory, equals(12000000000));
+      expect(info.displayMetrics.widthPixels, equals(1440));
+      expect(info.systemFeatures, contains('android.hardware.camera'));
     });
   });
 
