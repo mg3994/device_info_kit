@@ -1,0 +1,3 @@
+C:/Users/manis/Desktop/workspace/workspace/apps/starter/packages/device_info_kit/android/.cxx/RelWithDebInfo/4366e1e4/x86_64/CMakeFiles/device_info_kit.dir
+C:/Users/manis/Desktop/workspace/workspace/apps/starter/packages/device_info_kit/android/.cxx/RelWithDebInfo/4366e1e4/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/manis/Desktop/workspace/workspace/apps/starter/packages/device_info_kit/android/.cxx/RelWithDebInfo/4366e1e4/x86_64/CMakeFiles/rebuild_cache.dir

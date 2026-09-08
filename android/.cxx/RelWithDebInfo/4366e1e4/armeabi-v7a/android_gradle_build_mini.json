@@ -1,0 +1,27 @@
+{
+  "buildFiles": [
+    "C:\\Users\\manis\\Desktop\\workspace\\workspace\\apps\\starter\\packages\\device_info_kit\\android\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Users\\manis\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "C:\\Users\\manis\\Desktop\\workspace\\workspace\\apps\\starter\\packages\\device_info_kit\\android\\.cxx\\RelWithDebInfo\\4366e1e4\\armeabi-v7a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Users\\manis\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "C:\\Users\\manis\\Desktop\\workspace\\workspace\\apps\\starter\\packages\\device_info_kit\\android\\.cxx\\RelWithDebInfo\\4366e1e4\\armeabi-v7a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "device_info_kit::@6890427a1f51a3e7e1df": {
+      "artifactName": "device_info_kit",
+      "abi": "armeabi-v7a",
+      "output": "C:\\Users\\manis\\Desktop\\workspace\\workspace\\apps\\starter\\build\\device_info_kit\\intermediates\\cxx\\RelWithDebInfo\\4366e1e4\\obj\\armeabi-v7a\\libdevice_info_kit.so",
+      "runtimeFiles": []
+    }
+  }
+}

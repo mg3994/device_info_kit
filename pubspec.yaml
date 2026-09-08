@@ -1,0 +1,35 @@
+name: device_info_kit
+description: Native device information plugin for DartNative framework (iOS & Android).
+version: 0.1.0
+homepage: https://github.com/mg3994/device_info_kit
+
+# publish_to: 'none'
+funding:
+  - https://github.com/sponsors/Manishmg3994
+maintainer: mg3994 <manishgautammg7@yahoo.com>
+
+environment:
+  sdk: ^3.9.0-0
+
+dependencies:
+  dartnative: ^1.0.0
+  ffi: ^2.1.0
+
+# dartnative plugin registrant — consumed by the SDK's injectPlugins
+# pass on every `dn pub get`.
+# The generator discovers this block via .dart_tool/package_config.json
+# and emits the corresponding import + loadSymbols() call into the
+# app's lib/dartnative_plugin_registrant.dart.
+dartnative:
+  plugin:
+    platforms:
+      ios:
+        ffiPlugin: true
+      android:
+        package: in.antinna.deviceinfo
+        pluginClass: DartNativeDeviceInfoPlugin
+  registrant:
+    imports:
+      - package:device_info_kit/device_info_kit.dart
+    calls:
+      - DeviceInfoFFIBindings.loadSymbols();

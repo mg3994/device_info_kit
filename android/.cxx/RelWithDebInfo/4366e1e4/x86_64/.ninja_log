@@ -1,0 +1,4 @@
+# ninja log v5
+1	343	8105538280044863	CMakeFiles/device_info_kit.dir/src/main/cpp/device_info_bridge.cpp.o	e377f1e5ae798423
+345	505	8105538281650843	C:/Users/manis/Desktop/workspace/workspace/apps/starter/build/device_info_kit/intermediates/cxx/RelWithDebInfo/4366e1e4/obj/x86_64/libdevice_info_kit.so	8954afe54bf0ba28
+4	171	8105543858017473	C:/Users/manis/Desktop/workspace/workspace/apps/starter/build/device_info_kit/intermediates/cxx/RelWithDebInfo/4366e1e4/obj/x86_64/libdevice_info_kit.so	8954afe54bf0ba28
