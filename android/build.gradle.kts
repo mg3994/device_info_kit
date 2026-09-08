@@ -8,7 +8,6 @@ android {
     compileSdk = 36
     ndkVersion = "28.2.13676358" // 16 KB page-size compliance (Play/Android 15+); NDK r28+ aligns LOAD segments to 16 KB
 
-
     defaultConfig {
         minSdk = 24
         ndk {
@@ -21,8 +20,8 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = "17"
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
     }
 
     externalNativeBuild {
@@ -36,9 +35,10 @@ android {
 dependencies {
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.annotation:annotation:1.7.1")
-    if (rootProject.findProject(":dartnative_android") != null) {
-        compileOnly(project(":dartnative_android"))
+    val dartNativeProject = rootProject.findProject(":dartnative_android")
+    if (dartNativeProject != null) {
+        add("compileOnly", dartNativeProject)
     } else {
-        compileOnly("io.flutter:flutter_embedding_release:1.0.0-e7119a0e10")
+        add("compileOnly", "io.flutter:flutter_embedding_release:1.0.0-e7119a0e10")
     }
 }
