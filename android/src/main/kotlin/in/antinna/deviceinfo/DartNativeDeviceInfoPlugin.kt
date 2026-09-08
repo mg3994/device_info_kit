@@ -1,4 +1,4 @@
-package in.antinna.deviceinfo
+package `in`.antinna.deviceinfo
 
 import android.app.ActivityManager
 import android.app.Application
