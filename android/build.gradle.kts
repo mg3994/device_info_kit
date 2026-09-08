@@ -8,12 +8,8 @@ android {
     compileSdk = 36
     ndkVersion = "28.2.13676358" // 16 KB page-size compliance (Play/Android 15+); NDK r28+ aligns LOAD segments to 16 KB
 
-
     defaultConfig {
         minSdk = 24
-        ndk {
-            abiFilters.addAll(setOf("armeabi-v7a", "arm64-v8a", "x86", "x86_64"))
-        }
     }
 
     compileOptions {
@@ -22,11 +18,11 @@ android {
     }
 
     kotlin {
-    compilerOptions {
-        jvmTarget.set(
-            org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
-        )
-     }
+        compilerOptions {
+            jvmTarget.set(
+                org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
+            )
+        }
     }
 
     externalNativeBuild {
