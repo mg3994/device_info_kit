@@ -1,13 +1,15 @@
 name: Publish DartNative Plugin
 
 on:
-  push:
-    branches:
-      - '**'
-  pull_request:
-    branches:
-      - '**'
   workflow_dispatch:
+    inputs:
+      action:
+        description: 'Choose the operation to run'
+        required: true
+        type: choice
+        options:
+          - publish
+          - sync
 
 jobs:
   publish:
@@ -48,7 +50,14 @@ jobs:
       - name: Resolve dependencies
         run: dn pub get
 
+      - name: Sync DartNative plugin
+        if: ${{ inputs.action == 'sync' }}
+        env:
+          DN_PUBLISH_TOKEN: ${{ secrets.DN_PUBLISH_TOKEN }}
+        run: dn plugin sync --token "$DN_PUBLISH_TOKEN"
+
       - name: Publish to dartpub.dev
+        if: ${{ inputs.action == 'publish' }}
         env:
           DN_PUBLISH_TOKEN: ${{ secrets.DN_PUBLISH_TOKEN }}
         run: dn publish --token "$DN_PUBLISH_TOKEN"
