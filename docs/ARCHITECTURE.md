@@ -47,7 +47,7 @@ FFI Bindings (dart:ffi - direct C call)
          ios:
            ffiPlugin: true
          android:
-           package: com.dartnative.deviceinfo
+           package: in.antinna.deviceinfo
            pluginClass: DartNativeDeviceInfoPlugin
      registrant:
        imports:

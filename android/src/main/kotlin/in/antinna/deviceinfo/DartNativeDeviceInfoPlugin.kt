@@ -1,4 +1,4 @@
-package com.dartnative.deviceinfo
+package in.antinna.deviceinfo
 
 import android.app.Application
 import android.content.Context

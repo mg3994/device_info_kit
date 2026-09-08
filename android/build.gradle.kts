@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.dartnative.deviceinfo"
+    namespace = "in.antinna.deviceinfo"
     compileSdk = 36
     ndkVersion = "28.2.13676358" // 16 KB page-size compliance (Play/Android 15+); NDK r28+ aligns LOAD segments to 16 KB
 

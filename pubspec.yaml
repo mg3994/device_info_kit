@@ -19,7 +19,7 @@ dartnative:
       ios:
         ffiPlugin: true
       android:
-        package: com.dartnative.deviceinfo
+        package: in.antinna.deviceinfo
         pluginClass: DartNativeDeviceInfoPlugin
   registrant:
     imports:

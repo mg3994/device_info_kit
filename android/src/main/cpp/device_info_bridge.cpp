@@ -13,7 +13,7 @@ extern "C" JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, void* reserved) {
         return JNI_ERR;
     }
 
-    jclass localClass = env->FindClass("com/dartnative/deviceinfo/DartNativeDeviceInfoPlugin");
+    jclass localClass = env->FindClass("in/antinna/deviceinfo/DartNativeDeviceInfoPlugin");
     if (!localClass) {
         if (env->ExceptionCheck()) {
             env->ExceptionClear();
